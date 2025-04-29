@@ -1,0 +1,84 @@
+<div class="container ">
+  <div class="card-header">
+    <h4>Reporte de Citas Medicas</h4>
+  </div>
+
+  <div class="card-body">
+    <br>
+    <br>
+
+    <form [formGroup]="formularioDeReporte">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-6 col-lg-3">
+            <div class="form-group has-success">
+              <label for="paciente">Paciente:</label>
+              <select class="form-select" aria-label="Default select example" formControlName="paciente">
+                <option value="" disabled selected>Selecciona un paciente</option>
+                <option *ngFor="let paciente of pacientes" value={{paciente.id}}>{{paciente.nombre}}</option>
+              </select>
+              <span class="text-danger" *ngIf="formularioDeReporte.controls.paciente.errors?.required"><br>Campo
+                requerido el nombre del paciente</span>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="form-group">
+              <label for="medico">Especialidad:</label>
+              <select class="form-select" aria-label="Default select example" formControlName="especialidad">
+                <option value="" disabled selected>Selecciona una especialidad</option>
+                <option *ngFor="let medico of medicos" value={{medico.idmedicos}}>{{medico.area}}</option>
+              </select>
+              <span class="text-danger" *ngIf="formularioDeReporte.controls.especialidad.errors?.required"><br>Campo
+                requerido el medico</span>
+            </div>
+
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="form-group has-success">
+              <label for="Finicial">Fecha:</label>
+              <input type="date" formControlName="fecha" value="Success" class="form-control form-control-success">
+              <span class="text-danger" *ngIf="formularioDeReporte.controls.fecha.errors?.required"><br>Campo requerido
+                de la fecha</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" type="button" (click)="buscarRegistro()" name="buscar"
+              class="btn btn-success">Buscar<span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <br>
+    <table class="content-table" *ngIf="citasmedicas.length>0" >
+      <thead>
+        <th>Especialidad</th>
+        <th>Paciente</th>
+        <th>Medico</th>
+        <th>Fecha</th>
+        <th>Costo</th>
+        <th>Accion</th>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of citasmedicas">
+          <td>{{item.area}}</td>
+          <td>{{item.nombre}}</td>
+          <td>{{item.nombremedico}}</td>
+          <td>{{item.fecha| date: 'shortDate' }}</td>
+          <td>{{costo}}</td>
+          <td> <a class="btn btn-info float-right" (click)="generaReporte(item)">
+              <i class="fa fa-print"></i></a> </td>
+         </tr>
+
+      </tbody>
+
+
+    </table>
+    <h1>Total: ${{costo}}</h1>
+    <!-- <button type="button" class="btn btn-primary">Reporte en PDF</button> -->
+  </div>
+
+
+</div>

@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="sidebar">
+    <h2>Doutor-SA</h2>
+    <div class="img">
+			<img src="assets/img/logotipo.png">
+		</div>
+    <ul *ngFor="let item of menu">
+      <li ><a class="nav-link" [routerLink]="[item.ruta]"><i [class]="item.icon"></i> {{item.nombre}}</a>
+    </ul>
+    <ul>
+      <li ><a class="nav-link" (click)="salir()"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a>
+    </ul>
+    <div class="social_media">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>

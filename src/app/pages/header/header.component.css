@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+nav {
+    display: absolute;
+    align-items: center;
+    background: #ebe9e9;
+    height: 60px;
+    position: relative;
+    border-bottom: 1px solid #ffffff
+}
+header {
+    background-color: #12cfe0;
+  }
+  
+  
+  .navlinks {
+    list-style: none;
+    float: right;
+    line-height: 60px;
+    margin: 0;
+    padding: 0;
+  }
+  .navlinks li {
+    display: inline-block;
+    margin: 0px 20px;
+  }
+  .navlinks li a {
+    color: #044146;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s linear 0s;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif; 
+  }
+  .navlinks li a:hover {
+    color: #09413e;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #094441;
+  }
+  li a.contact {
+    background-color: #053436;
+    padding: 9px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+    border-bottom: none;
+  }
+  li a.contact:hover {
+    background-color:#044146;
+    color: #044146;
+    border-bottom: none;
+  
+  }
+  #check {
+    display: none;
+  }
+  .menu-btn {
+    font-size: 25px;
+    color: #044146;
+    float: right;
+    line-height: 90px;
+    margin-right: 40px;
+    display: none;
+    cursor: pointer;
+  }
+  @media (max-width: 800px) {
+    .navlinks {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      text-align: right;
+      transition: all 0.5s;
+      right: 100%;
+      background:#044146;
+    }
+    .navlinks li {
+      display: block;
+    }
+    .navlinks li a {
+      font-size: 20px;
+    }
+    .navlinks li a:hover {
+      border-bottom: none;
+    }
+    .menu-btn {
+      display: block;
+    }
+    #check:checked ~ .navlinks {
+      right: 0;
+    }
+  }
+  @media (max-width: 360px) {
+    .logo {
+      margin-left: 10px;
+      font-size: 25px;
+    }
+    .menu-btn {
+      margin-right: 10px;
+      font-size: 25px;
+    }
+    .menu-btn:focus {
+      color: rgb(9, 82, 100);
+    }
+  }
+   
+ 

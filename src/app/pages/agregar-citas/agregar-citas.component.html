@@ -1,0 +1,69 @@
+<div class="container ">
+    <div class="card-header">
+        <h1>Agregar Citas Medicas</h1>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="formularioDeCitas" autocomplete="off"  (ngSubmit)="agregarCita()">
+            <div class="row">
+
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Medico</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="medico" >
+                        <option value="" disabled selected>Selecciona un medico</option>
+                        <option *ngFor="let medico of medicos" value={{medico.idmedicos}}>{{medico.nombre}}</option>
+                      </select>
+                    <span class="text-danger" *ngIf="formularioDeCitas.controls.medico.errors?.required"><br>Campo requerido el medico</span>
+                </div>
+
+                <!-- <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Especialidad</label>
+                    <input type="area" class="form-control"  formControlName="area" name="" id="" aria-describedby="helpId" placeholder="Ingresa el especialidad">
+                    <span class="text-danger" *ngIf="formularioDeCitas.controls.area.errors?.required"><br>Campo requerido el area</span>
+                </div> -->
+
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Fecha</label>
+                    <input type="date" class="form-control" formControlName="fecha"  name="" id="" aria-describedby="helpId" placeholder="Ingresa el fecha">
+                    <span class="text-danger" *ngIf="formularioDeCitas.controls.fecha.errors?.required"><br>Campo requerido el fecha</span>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Hora</label>
+                    <input type="time" class="form-control" formControlName="hora"  name="" id="" aria-describedby="helpId" placeholder="Ingresa el hora">
+                    <span class="text-danger" *ngIf="formularioDeCitas.controls.hora.errors?.required"><br>Campo requerido el hora</span>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Direccion</label>
+                    <input type="text" class="form-control" formControlName="direccion"   name="" id="" aria-describedby="helpId" placeholder="Ingresa el direccion">
+                    <span class="text-danger" *ngIf="formularioDeCitas.controls.direccion.errors?.required"><br>Campo requerido el direccion</span>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Lugar</label>
+                    <input type="text" class="form-control" formControlName="lugar"   name="" id="" aria-describedby="helpId" placeholder="Ingresa el Lugar">
+                    <span class="text-danger" *ngIf="formularioDeCitas.controls.lugar.errors?.required"><br>Campo requerido el Lugar</span>
+                </div>
+                <!-- <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Estado</label>
+                    <select class="form-select" aria-label="Default select example" placeholder="Ingresa el Lugar" formControlName="estado" >
+                        <option value="" disabled selected>Selecciona un estado</option>
+                        <option value="0">Activo</option>
+                        <option value="1">Inactivo</option>
+                      </select>
+                    <span class="text-danger" *ngIf="formularioDeCitas.controls.estado.errors?.required"><br>Campo requerido el estado</span>
+                </div> -->
+               
+                </div>
+              <br>
+
+
+
+
+            <div class="btn-group" role="group" aria-label=""> 
+                <button type="submit" class="btn btn-success"> Agregar</button>
+                <button type="button" routerLink="/listar-citas" class="btn btn-primary"> Cancelar</button>
+            </div>
+        </form>
+    </div>
+    
+</div>
+

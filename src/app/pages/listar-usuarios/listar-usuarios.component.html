@@ -1,0 +1,42 @@
+<div class="container ">
+    <div class="card-header">
+        <a class="nav-link" [routerLink]="['../agregar-usuarios']" class="btn btn-dark">Agregar Nuevo Usuario</a> 
+	</div>
+
+	<div class="card-body">
+        <h1> Usuarios </h1>
+       
+        </div>
+        <table class="content-table">
+            <thead>
+                <tr >
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Contraseña</th> 
+                    <th>Roles</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                <tr class="active-row"  *ngFor="let usuarios of Usuarios; let iControl=index">
+                    <td> {{usuarios.id }}</td>
+                    <td> {{ usuarios.nombre }}</td>
+                    <td> {{ usuarios.email }} </td>
+                    <td> {{ usuarios.password }}</td>
+                    <td> {{ usuarios.idrol }}</td>
+                    
+                
+                    <td>
+                    <a class="btn btn-warning" routerLink="/editar-usuarios/{{usuarios.id}}"> <i class="fa fa-pen"></i></a>
+                    <a class="btn btn-danger" (click)="borrarRegistro(usuarios.id,iControl)" role="button"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+             
+            </tbody>
+        </table>
+       
+            
+        
+</div>

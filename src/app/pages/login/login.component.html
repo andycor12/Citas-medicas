@@ -1,0 +1,27 @@
+<img class="wave" src="assets/img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="assets/img/doctores.svg">
+		</div>
+        <div class="loginform">
+            <!-- Avatar Image -->
+            <div class="avatar">
+                <img src="assets/img/user.png" alt="Avatar">
+            </div>
+            <h2>Iniciar Sesión</h2>
+            <!-- Start Form -->
+            <form [formGroup]="loginForm">
+                <p><i class="fa fa-envelope"></i> Correo electronico</p>
+                <input type="text" name="username" placeholder="Enter Email" formControlName="email">
+                <div class="error" *ngIf="loginForm.controls.email.errors && loginForm.controls.email.touched">Completa el correo electronico</div>
+            
+                <p><i class="fa fa-lock"></i> Contraseña</p>
+                <input type="password" name="password" placeholder="Enter Contraseña" formControlName="password">
+                <div class="error" *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched">Campo requerido mas de 6 digitos</div>
+              
+                <input [disabled]="!loginForm.valid" type="submit"  (click)=" LoginUsuario()" value="Login">
+               
+             <a [routerLink]="['/registro']" class="have-not">¿No tienes una cuenta? <b>Registrarte</b></a>
+
+            </form>        
+        </div>

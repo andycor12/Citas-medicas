@@ -1,0 +1,45 @@
+<div class="container">
+        <div class="card-header">
+            <a class="btn btn-dark" routerLink="/agregar-medicos/"> Agregar Nuevo medico </a>
+        </div>
+
+        <div class="card-body">
+            <h1>Medicos </h1>
+            <table class="content-table">
+                <thead>
+                    <tr >
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Area</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active-row" *ngFor="let Medico of medicos; let iControl=index">
+                        <td>{{ Medico.idmedicos }}</td>
+                        <td>{{ Medico.nombre }}</td>
+                        <td>{{ Medico.email }}</td>
+                        <td>{{ Medico.direccion }}</td>
+                        <td>{{ Medico.telefono }}</td>
+                        <td>{{ Medico.area }}</td>
+                     
+                        
+                       <td>
+                        <a class="btn btn-warning" routerLink="/editar-medicos/{{ Medico.idmedicos}}"> <i class="fas fa-edit"></i></a>
+                        <a class="btn btn-danger" (click)="borrarRegistro(Medico.idmedicos,iControl)"  role="button"><i class="fas fa-trash-alt"></i></a>
+                       </td>
+                        
+                        
+                    </tr>
+                 
+                </tbody>
+                </table>
+        </div>
+
+
+
+
+</div>

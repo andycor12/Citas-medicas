@@ -1,0 +1,133 @@
+.main-section{
+    margin:0 auto;
+    margin-top:10%;
+}
+.card{
+	opacity: .95;
+    padding: 40px;
+}
+.card-body{
+    background-color: #ffffff;
+    box-shadow: 0px 0px 3px #fffefe;
+}
+
+.botonesA{
+  margin: 5px;
+}
+
+label{
+	font-weight: bold;
+}
+
+.nav-tabs .nav-item a:not(.active){
+	background-color: #ffffff;
+}
+
+.nav-tabs{
+	border-bottom:0px;
+}
+
+.form{
+    padding: 15px;
+}
+
+
+button{
+    margin:5px;
+}
+
+
+.input-group-text+.form-control,
+.input-group-text~.form-control {
+  padding: -0.5rem 0.7rem;
+  padding-left: 18px;
+}
+
+.input-group-text i {
+  width: 17px;
+}
+
+.input-group,
+.form-group {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.input-group[disabled] .input-group-text {
+  background-color: #E3E3E3;
+}
+
+.input-group .input-group-prepend,
+.form-group .input-group-prepend {
+  margin-right: 0;
+}
+
+.input-group .input-group-prepend .input-group-text,
+.form-group .input-group-prepend .input-group-text {
+  border-left: 1px solid #E3E3E3;
+}
+
+.input-group .input-group-append .input-group-text,
+.form-group .input-group-append .input-group-text {
+  border-right: 1px solid #E3E3E3;
+  padding: 10px 18px 10px 0;
+}
+
+.input-group .form-control:first-child,
+.input-group-text:first-child {
+  border-right: 0 none;
+}
+
+.input-group .form-control:last-child,
+.input-group-text:last-child {
+  border-left: 0 none;
+}
+
+.form-control[disabled],
+.form-control[readonly] {
+  background-color: #E3E3E3;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+.has-success.form-group .form-control,
+.has-danger.form-group .form-control {
+  padding-right: 40px;
+}
+
+.form-group input[type=file] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.button {
+  background-color: #06505e;
+  border: none;
+  color: white;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  width: 140px;
+  font-size: 14px;
+  margin: 20px;
+ cursor: pointer;
+  top: 90%;
+  position: absolute;
+  right: -15px;
+}
+
+
+.error{
+  color: red;
+  margin-top: 0px;
+  margin: 5px;
+  font-size: .7rem;
+  border-radius: 5px;
+}

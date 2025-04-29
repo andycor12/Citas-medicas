@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-header">
+        <h1>Agregar pacientes</h1>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="formularioDepacientes" (ngSubmit)="enviarDatos()">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" formControlName="nombre" name="" id="" aria-describedby="helpId" placeholder="Ingresa el Nombre">
+                    <span class="text-danger" *ngIf="formularioDepacientes.controls.nombre.errors?.required"><br>Campo requerido el nombre</span>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Email</label>
+                    <input type="email" class="form-control"  formControlName="email"  name="" id="" aria-describedby="helpId" placeholder="Ingresa el correo">
+                    <span class="text-danger" *ngIf="formularioDepacientes.controls.email.errors?.required"><br>Campo requerido el email</span>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Ciudad</label>
+                    <input type="email" class="form-control"  formControlName="ciudad"  name="" id="" aria-describedby="helpId" placeholder="Ingresa el ciudad">
+                    <span class="text-danger" *ngIf="formularioDepacientes.controls.ciudad.errors?.required"><br>Campo requerido el ciudad</span>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Telefono</label>
+                    <input type="number" class="form-control"  formControlName="telefono"  name="" id="" aria-describedby="helpId" placeholder="Ingresa el telefono">
+                    <span class="text-danger" *ngIf="formularioDepacientes.controls.telefono.errors?.required"><br>Campo requerido el telefono</span>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="" class="form-label">Cedula</label>
+                    <input type="number" class="form-control"  formControlName="cedula"  name="" id="" aria-describedby="helpId" placeholder="Ingresa el cedula">
+                    <span class="text-danger" *ngIf="formularioDepacientes.controls.cedula.errors?.required"><br>Campo requerido cedula</span>
+                </div>
+                </div>
+              <br>
+
+
+
+
+            <div class="btn-group" role="group" aria-label=""> 
+                <button type="submit" class="btn btn-success" [disabled]="!formularioDepacientes.valid" > Agregar</button>
+                <button type="button" routerLink="/listar-pacientes" class="btn btn-primary"> Cancelar</button>
+            </div>
+        </form>
+    </div>
+    
+</div>

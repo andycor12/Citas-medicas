@@ -1,0 +1,36 @@
+<img class="wave" src="assets/img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="assets/img/people.svg">
+		</div>
+        <div class="loginform">
+            <!-- Avatar Image -->
+           
+            <h2>Registrate</h2>
+            <!-- Start Form -->
+            <form [formGroup]="registerform">
+
+              <p><i class="fas fa-file-alt"></i> Nombre Completo</p>
+              <input type="text" name="username" placeholder="Enter Nombre" formControlName="name">
+              <div class="error" *ngIf="registerform.controls.name.errors && registerform.controls.name.touched"><br>Campo requerido del nombre</div>
+              
+              <p><i class="fa fa-envelope"></i> Correo electronico</p>
+              <input type="text" name="username" placeholder="Enter Email" formControlName="email">
+              <div class="error" *ngIf="registerform.controls.email.errors && registerform.controls.email.touched"><br>Campo requerido email completo</div>
+            
+              <p><i class="fa fa-lock"></i> Contraseña</p>
+              <input type="password" name="password" placeholder="Enter Contraseña" formControlName="password">
+              <div class="error" *ngIf="registerform.controls.password.errors && registerform.controls.password.touched"><br>Campo requerido mas de 6 digitos</div>
+     
+            <p><i class="fas fa-users"></i> Tipo de rol</p>
+            <select class="select-css" aria-label="Default select example" formControlName="idrol">
+              <option value="" disabled selected>Selecciona un rol</option>
+              <option *ngFor="let rol of roles" value={{rol.idroles}}>{{rol.namerol}}</option>
+            </select>
+
+            <button type="submit" class="btn" (click)="registrarUsuario()" [disabled]="!registerform.valid">Registrarse</button>
+
+          </form>        
+      </div>
+
+         

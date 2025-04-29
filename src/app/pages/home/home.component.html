@@ -1,0 +1,40 @@
+<div class="container">
+   <h3>Bienvenido {{usuario?.nombre| uppercase}} </h3>
+    <section class="jumbotron">
+        <div class="container">
+            <div class="row text-center">
+                <h1>Agendamiento de citas Medicas</h1>
+    
+                <p>Bienvenido A Nuestro Nuevo Centro De citas medicas, Para Su Comodidad, Tenemos Nuestra Primera Pagina Web, Diposible Para Nuestros Consumidores Estamos A Su Servicio. Estamos Especializados Para Tartarte De La Mejor Manera Posible. 
+                    Confia En Nosotros Y Nosotros Confiaremos En Ti Plenamente. Unete A Nosotros Con Nuestras Nuevas Campañas.</p>
+                 <p><a class="btn btn-dark" routerLink="/home/">Learn More</a></p>
+            </div>
+        </div>
+    </section>
+    </div>
+  <section class="full-reset text-center" style="padding: 40px 0;">
+      <!-- <article class="tile">
+          <div class="tile-icon full-reset"><i class="fas fa-user-tie"></i></div>
+          <div class="tile-name all-tittles">Usuarios</div>
+          <div class="tile-num full-reset">{{5}}</div>
+      </article> -->
+      <article class="tile">
+          <div class="tile-icon full-reset"><i class="fas fa-user-nurse"></i></div>
+          <div class="tile-name all-tittles">Medicos</div>
+          <div class="tile-num full-reset">{{nummedicos}}</div>
+      </article>
+      <!-- <article class="tile">
+          <div class="tile-icon full-reset"><i class="fas fa-book-medical"></i></div>
+          <div class="tile-name all-tittles">Reporte</div>
+          <div class="tile-num full-reset">{{numreportes}}</div>
+      </article> -->
+     
+      <article class="tile">
+          <div class="tile-icon full-reset"><i class="fas fa-calendar-alt"></i></div>
+          <div class="tile-name all-tittles">Citas medicas</div>
+          <div class="tile-num full-reset">{{numcitas}}</div>
+      </article>
+     
+  </section>
+
+  

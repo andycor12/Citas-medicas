@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header">
+		<h4> Pacientes </h4>
+        
+	</div>
+
+	<div class="card-body">
+        <a class="nav-link" [routerLink]="['../agregar-pacientes']" class="btn btn-dark">Agregar Nuevo paciente</a>
+        </div>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Ciudad</th>
+                    <th>Telefono</th>
+                    <th>Cedula</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                <tr *ngFor="let pacientes of pacientes; let iControl=index">
+                    <td>{{pacientes.idpaciente}}</td>
+                    <td>{{pacientes.nombre}}</td>
+                    <td>{{pacientes.email}}</td>
+                    <td>{{pacientes.ciudad}}</td>
+                    <td>{{pacientes.telefono}}</td>
+                    <td>{{pacientes.cedula}}</td>
+                    <td>
+                    <a class="btn btn-warning" routerLink="/editar-pacientes/{{ pacientes.idpaciente }}"> Editar</a> || 
+                    <a class="btn btn-danger" (click)="borrarRegistro(pacientes.idpaciente,iControl)" role="button">Borrar</a>
+                    </td>
+                </tr>
+             
+            </tbody>
+        </table>
+       
+            
+        
+</div>

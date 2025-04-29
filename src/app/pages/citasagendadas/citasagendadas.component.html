@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="card-header">
+
+        <h1>Citas Medicas Pendientes </h1>
+    </div>
+    <div class="card-body">
+       
+
+        <div class="form-group">
+            <input class="form-control" id="buscarnombre" name="nombre" #nombuscar placeholder="Ingrese la especialidad"
+                type="text">
+                <br>
+            <button type="submit" type="button" (click)="buscarRegistro()" name="buscar"
+                class="btn btn-primary">Buscar<span class="glyphicon glyphicon-search"
+                    aria-hidden="true"></span></button>
+        </div>
+
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Especialidad</th>
+                    <th scope="col">Medico</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Lugar</th>
+                    <th scope="col">Direccion</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="active-row" *ngFor="let citas of citasmedicas; let iControl=index">
+                    <td>{{citas.id}}</td>
+                    <td>{{citas.area}}</td>
+                    <td>{{citas.nombremedico}}</td>
+                    <td>{{citas.fecha | date: 'shortDate'}}</td>
+                    <td>{{citas.hora}}</td>
+                    <td>{{citas.lugar}}</td>
+                    <td>{{citas.direccion}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

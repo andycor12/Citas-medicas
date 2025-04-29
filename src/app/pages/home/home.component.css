@@ -1,0 +1,68 @@
+
+.tile{
+    display: inline-block;
+    width: 220px;
+    height: auto;
+    border: 1px solid #E1E1E1;
+    position: relative;
+    cursor: pointer;
+    margin: 10px;
+}
+.tile-icon,.tile-num{
+    height: 110px;
+    line-height: 110px;
+    position: relative;
+}
+.tile-icon{
+    color: #06a57d;
+    border-bottom: 1px solid #E1E1E1;
+    font-size: 50px;
+}
+.tile-icon i{
+    transition: all .3s ease-in-out;
+}
+.tile-num{
+    background-color: #F5F5F5;
+    font-size: 40px;
+}
+.tile-name{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 7;
+    padding: 0 10px;
+    border-radius: 15px;
+    background-color: #06a57d;
+    border: 1px solid #06a57d;
+    font-weight: bold;
+    max-width: 95%;
+    min-width: 60%;
+    width: auto;
+}
+.tile:hover .tile-icon i{
+    transform: scale(1.5);
+    color: #07323a;
+}
+img{
+  padding: 20px;
+  width: 1000px;
+  height: 410px;
+  margin: 10px;
+  position: relative;
+}
+
+.container{
+    padding:25px;
+    
+}
+
+.jumbotron{
+
+    height: 100%;
+    width: 100%;
+    background-size:cover;
+    background-color:#07323a;
+    
+    color:rgb(255, 255, 255);
+}

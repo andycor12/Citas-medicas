@@ -1,0 +1,56 @@
+<div class="container ">
+    <div class="card-header">
+
+        <a class="btn btn-dark" routerLink="/agregar-citas/"> Agregar Nueva cita </a>
+
+    </div>
+    <div class="card-body">
+        <h1>Citas Medicas </h1>
+
+        <div class="form-group">
+            <input class="form-control" id="buscarnombre" name="nombre" #nombuscar placeholder="Ingrese la especialidad"
+                type="text">
+            <button type="submit" type="button" (click)="buscarRegistro()" name="buscar"
+                class="btn btn-primary">Buscar<span class="glyphicon glyphicon-search"
+                    aria-hidden="true"></span></button>
+        </div>
+
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Especialidad</th>
+                    <th scope="col">Medico</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Lugar</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Asignada</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="active-row" *ngFor="let citas of citasmedicas; let iControl=index">
+                    <td>{{citas.id}}</td>
+                    <td>{{citas.area}}</td>
+                    <td>{{citas.nombremedico}}</td>
+                    <td>{{citas.fecha | date: 'shortDate'}}</td>
+                    <td>{{citas.hora}}</td>
+                    <td>{{citas.lugar}}</td>
+                    <td>{{citas.direccion}}</td>
+                    <td>{{citas.aceptada==1?'Asignada':'Libre'}}</td>
+                    <td colspan="2">
+                        <a class="btn btn-warning" routerLink="/editar-citas/{{ citas.id }}">
+                            <i class="fa fa-pen"></i></a>
+                        <a class="btn btn-danger float-right" (click)="borrarRegistro(citas.id)" role="button"><i
+                                class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
